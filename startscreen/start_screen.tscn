@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bxa2xkalpjdi2"]
+[gd_scene load_steps=4 format=3 uid="uid://bxa2xkalpjdi2"]
 
 [ext_resource type="Script" uid="uid://f3r7hherqr6d" path="res://startscreen/start_screen.gd" id="1_ncxyx"]
-[ext_resource type="Script" uid="uid://tw7s5ca6d1as" path="res://startscreen/start_screen_fade_timer.gd" id="2_pevhg"]
+[ext_resource type="Script" uid="uid://7xb44w1m7lp1" path="res://startscreen/v_box_container.gd" id="2_p7xc8"]
+
+[sub_resource type="GDScript" id="GDScript_ijwwh"]
+script/source = "extends Timer
+"
 
 [node name="StartScreen" type="Control"]
 layout_mode = 3
@@ -20,7 +24,9 @@ offset_right = 620.0
 offset_bottom = 373.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
+script = ExtResource("2_p7xc8")
 
 [node name="Start" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -35,9 +41,8 @@ layout_mode = 2
 text = "Quit Game"
 
 [node name="FadeTimer" type="Timer" parent="MarginContainer/VBoxContainer"]
-wait_time = 2.0
 one_shot = true
-script = ExtResource("2_pevhg")
+script = SubResource("GDScript_ijwwh")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
