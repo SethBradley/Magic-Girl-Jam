@@ -15,6 +15,10 @@ run/main_scene="uid://db4tht5rdbg4f"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Settings="*res://src/scripts/Settings.gd"
+
 [dotnet]
 
 project/assembly_name="Magic Girl Game"
