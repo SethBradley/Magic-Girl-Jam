@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://bkrfrsqvqt8w4"]
+
+[ext_resource type="Texture2D" uid="uid://c3oya8fs6eqjy" path="res://icon.svg" id="1_iulh3"]
+[ext_resource type="Script" uid="uid://cnyc4y8dl01c7" path="res://src/scene_boss_battle/dance_a_path.gd" id="1_meavw"]
+
+[sub_resource type="Curve2D" id="Curve2D_iulh3"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 570, 100, 0, 0, 0, 0, 570, 247, 0, 0, 0, 0, 408, 246, 0, 0, 0, 0, 409, 100)
+}
+point_count = 4
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iulh3"]
+size = Vector2(62, 61)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Dance_A" type="Path2D" parent="."]
+curve = SubResource("Curve2D_iulh3")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Dance_A"]
+position = Vector2(570, 100)
+rotation = 1.5708
+rotates = false
+loop = false
+script = ExtResource("1_meavw")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Dance_A/PathFollow2D"]
+position = Vector2(-100, 570)
+rotation = -1.5708
+
+[node name="Sprite2D" type="Sprite2D" parent="Dance_A/PathFollow2D/CharacterBody2D"]
+position = Vector2(569, 97)
+scale = Vector2(0.46875, 0.46875)
+texture = ExtResource("1_iulh3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dance_A/PathFollow2D/CharacterBody2D"]
+position = Vector2(570, 97)
+shape = SubResource("RectangleShape2D_iulh3")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D2" type="Sprite2D" parent="Player"]
+modulate = Color(0.0355, 0.0403333, 0.05, 1)
+position = Vector2(571, 523)
+scale = Vector2(0.46875, 0.46875)
+texture = ExtResource("1_iulh3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Player"]
+position = Vector2(572, 523)
+shape = SubResource("RectangleShape2D_iulh3")
