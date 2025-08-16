@@ -6,15 +6,15 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4rsck"]
 bg_color = Color(0.231373, 0.607843, 1, 0)
 
-[node name="DialogWindow" type="Control" node_paths=PackedStringArray("text_box")]
+[node name="DialogWindow" type="Control" node_paths=PackedStringArray("text_box", "next_indicator")]
 layout_mode = 3
-anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4rsck")
 text_box = NodePath("MarginContainer/VBoxContainer/VBCont_Textbox/HBCont/PCont_DialogPanel/MCont/DialogText")
+next_indicator = NodePath("MarginContainer/VBoxContainer/VBCont_Textbox/HBCont/PCont_DialogPanel/Indicator")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -90,21 +90,36 @@ vertical_alignment = 1
 [node name="HBCont" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VBCont_Textbox"]
 layout_mode = 2
 
-[node name="PCont_DialogPanel" type="PanelContainer" parent="MarginContainer/VBoxContainer/VBCont_Textbox/HBCont"]
+[node name="PCont_DialogPanel" type="Panel" parent="MarginContainer/VBoxContainer/VBCont_Textbox/HBCont"]
 layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="MCont" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBCont_Textbox/HBCont/PCont_DialogPanel"]
 layout_mode = 2
+offset_right = 904.0
+offset_bottom = 204.0
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
 
 [node name="DialogText" type="RichTextLabel" parent="MarginContainer/VBoxContainer/VBCont_Textbox/HBCont/PCont_DialogPanel/MCont"]
 layout_mode = 2
 bbcode_enabled = true
 text = "this is [b]bold text[/b]
 "
+
+[node name="Indicator" type="ColorRect" parent="MarginContainer/VBoxContainer/VBCont_Textbox/HBCont/PCont_DialogPanel"]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.95
+anchor_top = 0.8
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+color = Color(1, 0.462745, 1, 0.729412)
 
 [node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/VBCont_Textbox/HBCont"]
 layout_mode = 2
