@@ -1,0 +1,56 @@
+{
+  "Conversations": [
+	{
+	  "ConversationId": 1,
+	  "Data": [
+		{
+		  "DialogId": 1,
+		  "PrevDialogId": null,
+		  "Speaker": "Seth",
+		  "Text": "Hello, I am [b]Seth[/b]",
+		  "NextDialogId": 2,
+		  "HasClue": false,
+		  "HasReply": false,
+		  "ReplyChoices": []
+		},
+		{
+		  "DialogId": 2,
+		  "PrevDialogId": 1,
+		  "Speaker": "Seth",
+		  "Text": "I have no quests for you",
+		  "NextDialogId": 0,
+		  "HasClue": false,
+		  "HasReply": false,
+		  "ReplyChoices": []
+		}
+	  ]
+	},
+	{
+	  "ConversationId": 2,
+	  "Data": [
+		{
+		  "DialogId": 45,
+		  "PrevDialogId": null,
+		  "Speaker": "Teddy",
+		  "Text": "Hello, I am Teddy",
+		  "NextDialogId": 33,
+		  "HasReply": false,
+		  "ReplyChoices": []
+		},
+		{
+		  "DialogId": 33,
+		  "PrevDialogId": 45,
+		  "Speaker": "Seth",
+		  "Text": "I have a quest for you, you want in?",
+		  "NextDialogId": 0,
+		  "HasClue": false,
+		  "HasReply": true,
+		  "ReplyChoices": [
+			{ "reply": "yes" },
+			{ "reply": "no" }
+		  ]
+		}
+	  ]
+	}
+  ]
+}
