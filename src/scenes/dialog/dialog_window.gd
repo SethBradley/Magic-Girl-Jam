@@ -2,6 +2,7 @@ extends Control
 signal advance_requested
 @export var text_box : RichTextLabel;
 @export var next_indicator : ColorRect;
+@onready var clue_found_window = $clue_found;
 
 var dialogEntries: Array[DialogEntry] = [];
 var conversationText: = [];
@@ -15,6 +16,7 @@ func _ready():
 	
 func _initialize():
 	next_indicator.visible = false;
+	clue_found_window.hide();
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("dialog_action"):
@@ -35,7 +37,7 @@ func play_dialog_at_id(targetID: int):
 		await stream_text_to_textbox(entry.text);
 		await advance_requested; 
 		if(entry.has_clue):
-			print("Display clue screen")
+			clue_found_window.show();
 	return;
 
 func stream_text_to_textbox(sourceText: String):
