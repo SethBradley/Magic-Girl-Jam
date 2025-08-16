@@ -22,3 +22,5 @@ godot.editor
 # OS junk
 .DS_Store
 Thumbs.db
+/indent_guidelines-*/
+/script-ide-*/
