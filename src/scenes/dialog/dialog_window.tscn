@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dg5sb5qb7hyjv"]
+[gd_scene load_steps=6 format=3 uid="uid://dg5sb5qb7hyjv"]
 
-[ext_resource type="Texture2D" uid="uid://dojyu5x7wqsld" path="res://assets/Seth/mustkillcalvin.png" id="1_0gdpp"]
 [ext_resource type="Script" uid="uid://cf8dog4inhthi" path="res://src/scenes/dialog/dialog_window.gd" id="1_4rsck"]
+[ext_resource type="Texture2D" uid="uid://dxw0rydxfovnf" path="res://assets/Seth/Screenshot 2025-08-10 211151.png" id="2_86n5b"]
+[ext_resource type="Texture2D" uid="uid://cp7v7m67r5sfp" path="res://assets/Seth/test.png" id="3_8gysg"]
+[ext_resource type="PackedScene" uid="uid://buahsxgl3d01n" path="res://src/scenes/clue_found/clue_found.tscn" id="4_8gysg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4rsck"]
 bg_color = Color(0.231373, 0.607843, 1, 0)
@@ -16,6 +18,17 @@ grow_vertical = 2
 script = ExtResource("1_4rsck")
 text_box = NodePath("MCont/VBCont/VBCont_Textbox/HBCont/PCont_DialogPanel/MCont/DialogText")
 next_indicator = NodePath("MCont/VBCont/VBCont_Textbox/HBCont/PCont_DialogPanel/Indicator")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_86n5b")
+expand_mode = 5
 
 [node name="MCont" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -58,10 +71,13 @@ anchor_left = 0.5
 anchor_top = 0.602
 anchor_right = 0.5
 anchor_bottom = 1.0
+offset_left = -323.0
+offset_top = -206.7
+offset_right = 310.0
+offset_bottom = 273.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_0gdpp")
-stretch_mode = 3
+texture = ExtResource("3_8gysg")
 
 [node name="VBCont_Textbox" type="VBoxContainer" parent="MCont/VBCont"]
 layout_mode = 2
@@ -120,7 +136,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 0
-color = Color(1, 0.462745, 1, 0.729412)
+color = Color(0, 0.825949, 0.713856, 0.729412)
+
+[node name="Label" type="Label" parent="MCont/VBCont/VBCont_Textbox/HBCont/PCont_DialogPanel/Indicator"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = ">>>>"
 
 [node name="GridContainer" type="GridContainer" parent="MCont/VBCont/VBCont_Textbox/HBCont"]
 layout_mode = 2
@@ -147,3 +172,7 @@ text = "Repeat?"
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 text = "Config"
+
+[node name="clue_found" parent="." instance=ExtResource("4_8gysg")]
+visible = false
+layout_mode = 1

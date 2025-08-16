@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=3 uid="uid://buahsxgl3d01n"]
+
+[ext_resource type="FontFile" uid="uid://dvfvnptv2uc5g" path="res://assets/Seth/Bevan-Regular.ttf" id="1_g1cg5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g1cg5"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ste4x"]
+bg_color = Color(0.67451, 0.556863, 0.670588, 0.6)
+
+[node name="clue_found" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.521569)
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.4
+anchor_right = 1.0
+anchor_bottom = 0.6
+offset_right = -0.0241699
+offset_bottom = 21.488
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60.42)
+layout_mode = 2
+theme_override_constants/outline_size = 23
+theme_override_fonts/normal_font = ExtResource("1_g1cg5")
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "[wave]Found a [color=red]Clue!"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_g1cg5")
+
+[node name="Panel" type="Panel" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_ste4x")

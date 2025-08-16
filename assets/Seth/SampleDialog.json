@@ -7,7 +7,7 @@
 		  "DialogId": 1,
 		  "PrevDialogId": null,
 		  "Speaker": "Seth",
-		  "Text": "Hello, I am [color=#f38476]Seth[/color].",
+		  "Text": "Hello, I am [color=green]Seth[/color].",
 		  "NextDialogId": 2,
 		  "HasClue": false,
 		  "HasReply": false,
@@ -19,7 +19,7 @@
 		  "Speaker": "Seth",
 		  "Text": "I was in the [color=#f38476] cafe at midnight[/color], where were you?",
 		  "NextDialogId": 0,
-		  "HasClue": false,
+		  "HasClue": true,
 		  "HasReply": false,
 		  "ReplyChoices": []
 		}
