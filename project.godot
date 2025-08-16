@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Magic Girl Game"
-run/main_scene="uid://dg5sb5qb7hyjv"
+run/main_scene="uid://db4tht5rdbg4f"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 staticdata="*res://src/scripts/singletons/static-data.gd"
+Settings="*res://src/scripts/Settings.gd"
 
 [dotnet]
 
