@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4r5r4j52qw7v"]
+
+[ext_resource type="Script" uid="uid://cy3i8ysufdpmh" path="res://src/scripts/singletons/SceneService.gd" id="1_hsw67"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_hsw67")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button3" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button4" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button5" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2

@@ -13,6 +13,14 @@ var _typing := false;
 func _ready():
 	_initialize();
 	play_dialog_at_id(1);
+	#test();
+	
+	
+func test():
+	var loader = ResourceLoader.load_threaded_request("res://src/scenes/loading_screen/loading_screen.tscn"); # returns an error such as OK or ERR_BUSY. Doesnt return the resource
+	if (!ResourceLoader.exists("res://src/scenes/loading_screen/loading_screen.tscn") or loader == null):
+		print(loader)
+	print(loader)
 	
 func _initialize():
 	next_indicator.visible = false;

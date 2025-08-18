@@ -1,0 +1,103 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3op7n8wvok65"]
+
+[ext_resource type="Script" uid="uid://dpq2ucrnv1eb4" path="res://src/scenes/clue_drawer/clue_drawer.gd" id="1_3vlre"]
+[ext_resource type="Texture2D" uid="uid://cv431yba6wt6d" path="res://assets/Seth/drawer.png" id="1_sum70"]
+[ext_resource type="Texture2D" uid="uid://lwpnmruhpm8d" path="res://assets/Seth/drawer-handle.png" id="2_3vlre"]
+
+[node name="VBox_clue_drawer" type="VBoxContainer"]
+anchors_preset = -1
+anchor_left = 0.3
+anchor_right = 0.6
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+script = ExtResource("1_3vlre")
+
+[node name="<img> Frame" type="TextureRect" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_sum70")
+
+[node name="<Margin-Cont>Drawer" type="MarginContainer" parent="<img> Frame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 75
+theme_override_constants/margin_top = 70
+theme_override_constants/margin_right = 63
+theme_override_constants/margin_bottom = 70
+
+[node name="<Grid-Cont>" type="GridContainer" parent="<img> Frame/<Margin-Cont>Drawer"]
+layout_mode = 2
+theme_override_constants/h_separation = 40
+theme_override_constants/v_separation = 90
+columns = 3
+
+[node name="Clue 1" type="ColorRect" parent="<img> Frame/<Margin-Cont>Drawer/<Grid-Cont>"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+color = Color(1, 1, 1, 0.360784)
+
+[node name="Clue 2" type="ColorRect" parent="<img> Frame/<Margin-Cont>Drawer/<Grid-Cont>"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+color = Color(1, 1, 1, 0.360784)
+
+[node name="ColorRect3" type="ColorRect" parent="<img> Frame/<Margin-Cont>Drawer/<Grid-Cont>"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+color = Color(1, 1, 1, 0.360784)
+
+[node name="ColorRect4" type="ColorRect" parent="<img> Frame/<Margin-Cont>Drawer/<Grid-Cont>"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+color = Color(1, 1, 1, 0.360784)
+
+[node name="ColorRect5" type="ColorRect" parent="<img> Frame/<Margin-Cont>Drawer/<Grid-Cont>"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+color = Color(1, 1, 1, 0.360784)
+
+[node name="ColorRect6" type="ColorRect" parent="<img> Frame/<Margin-Cont>Drawer/<Grid-Cont>"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+color = Color(1, 1, 1, 0.360784)
+
+[node name="ColorRect7" type="ColorRect" parent="<img> Frame/<Margin-Cont>Drawer/<Grid-Cont>"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+color = Color(1, 1, 1, 0.360784)
+
+[node name="ColorRect8" type="ColorRect" parent="<img> Frame/<Margin-Cont>Drawer/<Grid-Cont>"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+color = Color(1, 1, 1, 0.360784)
+
+[node name="ColorRect9" type="ColorRect" parent="<img> Frame/<Margin-Cont>Drawer/<Grid-Cont>"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+color = Color(1, 1, 1, 0.360784)
+
+[node name="<Margin-Cont>Button" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(0, 87.24)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="<Margin-Cont>Button"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="<Margin-Cont>Button/Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.454
+anchor_right = 0.615
+anchor_bottom = 0.75
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_3vlre")
+expand_mode = 1

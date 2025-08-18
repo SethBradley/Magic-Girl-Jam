@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://cf38h4r36b5cf"]
+
+[ext_resource type="Script" uid="uid://bhituqr7jn0g" path="res://src/scenes/blur_background/blur_background.gd" id="1_jdk4q"]
+[ext_resource type="Shader" uid="uid://dcmihem5ga2r0" path="res://src/scenes/blur_background/blur_background.gdshader" id="2_7yo73"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ahpwc"]
+shader = ExtResource("2_7yo73")
+shader_parameter/amount = 0.955
+shader_parameter/lod_max = 7.0
+shader_parameter/radius_px = 64.0
+shader_parameter/desaturate = 0.0
+shader_parameter/tint = Vector4(0, 0, 0, 0)
+shader_parameter/jitter_strength = 0.6
+
+[node name="blur_background_root" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jdk4q")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_ahpwc")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

@@ -1,0 +1,98 @@
+[gd_scene load_steps=3 format=3 uid="uid://v82fhrjpc16e"]
+
+[ext_resource type="Texture2D" uid="uid://r6d4egn86y8y" path="res://assets/Seth/clue_book_test.png" id="1_bcqna"]
+[ext_resource type="Script" uid="uid://bwrio5khgyk6v" path="res://src/scenes/clue_book/clue_book.gd" id="1_o81c3"]
+
+[node name="clue_book" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o81c3")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect-Background" type="TextureRect" parent="PanelContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("1_bcqna")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="PanelContainer - Left Page" type="PanelContainer" parent="PanelContainer/HBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/HBoxContainer/PanelContainer - Left Page"]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 145
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/HBoxContainer/PanelContainer - Left Page/MarginContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 40
+theme_override_constants/v_separation = 40
+columns = 3
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/HBoxContainer/PanelContainer - Left Page/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="PanelContainer/HBoxContainer/PanelContainer - Left Page/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="PanelContainer/HBoxContainer/PanelContainer - Left Page/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="PanelContainer/HBoxContainer/PanelContainer - Left Page/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="PanelContainer/HBoxContainer/PanelContainer - Left Page/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="PanelContainer/HBoxContainer/PanelContainer - Left Page/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect7" type="ColorRect" parent="PanelContainer/HBoxContainer/PanelContainer - Left Page/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect8" type="ColorRect" parent="PanelContainer/HBoxContainer/PanelContainer - Left Page/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect9" type="ColorRect" parent="PanelContainer/HBoxContainer/PanelContainer - Left Page/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="PanelContainer - Right Page" type="PanelContainer" parent="PanelContainer/HBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3

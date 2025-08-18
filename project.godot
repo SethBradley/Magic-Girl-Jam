@@ -19,6 +19,12 @@ config/icon="res://icon.svg"
 
 staticdata="*res://src/scripts/singletons/static-data.gd"
 Settings="*res://src/scripts/Settings.gd"
+SceneService="*res://src/scripts/singletons/SceneService.gd"
+
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [dotnet]
 
