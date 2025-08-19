@@ -1,7 +1,7 @@
 extends Control
 
 func _on_start_pressed():
-	SceneService.load_new_scene("res://src/scenes/main/main.tscn", "fade_to_white",2)
+	SceneService.load_new_scene("res://src/scenes/hub/hub.tscn", "fade_to_white",2)
 	pass # Replace with function body.
 
 

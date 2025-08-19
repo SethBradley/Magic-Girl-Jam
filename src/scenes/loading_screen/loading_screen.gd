@@ -1,7 +1,7 @@
 class_name LoadingScreen extends CanvasLayer
 
 signal transition_in_complete
-
+signal game_ready();
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 @onready var timer: Timer = $Timer
 
@@ -31,6 +31,7 @@ func finish_transition():
 	anim_player.play(ending_animation_name);
 	
 	await anim_player.animation_finished
+	game_ready.emit();
 	queue_free();
 	return;
 

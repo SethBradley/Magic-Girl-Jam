@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dnplp5yoaexsk"]
+[gd_scene load_steps=9 format=3 uid="uid://dnplp5yoaexsk"]
 
 [ext_resource type="Script" uid="uid://ndad3pd06pxn" path="res://src/scenes/loading_screen/loading_screen.gd" id="1_gkx1c"]
 
@@ -18,6 +18,42 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control-anim-objects/Panel:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1152, 648)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control-anim-objects/Panel:theme_override_styles/panel")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("StyleBoxFlat_gkx1c")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control-anim-objects/Panel:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_w33ty"]
@@ -64,11 +100,55 @@ tracks/1/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_2x6ow"]
+resource_name = "slide_from_black"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control-anim-objects/Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1152, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gkx1c"]
+resource_name = "slide_to_black"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control-anim-objects/Panel:theme_override_styles/panel:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control-anim-objects/Panel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1152, 0), Vector2(0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2x6ow"]
 _data = {
 &"RESET": SubResource("Animation_g1kjg"),
 &"fade_from_white": SubResource("Animation_w33ty"),
-&"fade_to_white": SubResource("Animation_akepc")
+&"fade_to_white": SubResource("Animation_akepc"),
+&"slide_from_black": SubResource("Animation_2x6ow"),
+&"slide_to_black": SubResource("Animation_gkx1c")
 }
 
 [node name="CanvasItem-load_screen" type="CanvasLayer"]

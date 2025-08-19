@@ -4,6 +4,7 @@ signal content_finished_loading(content);
 signal content_invalid(path: String);
 signal content_failed_to_load(path: String);
 
+
 var loading_screen: LoadingScreen;
 var _loading_screen_scene:PackedScene = preload("res://src/scenes/loading_screen/loading_screen.tscn");
 var _transition: String;
