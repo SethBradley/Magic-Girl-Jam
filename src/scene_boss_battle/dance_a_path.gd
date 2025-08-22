@@ -8,4 +8,5 @@ func _process(delta):
 func loop_movement(delta):
 	progress_ratio += delta * speed
 	
+	 
 	
