@@ -1,21 +1,18 @@
 [gd_scene load_steps=6 format=3 uid="uid://bkrfrsqvqt8w4"]
 
 [ext_resource type="Texture2D" uid="uid://c3oya8fs6eqjy" path="res://icon.svg" id="1_iulh3"]
-[ext_resource type="Script" uid="uid://cnyc4y8dl01c7" path="res://src/scene_boss_battle/dance_a_path.gd" id="1_meavw"]
-[ext_resource type="Script" uid="uid://bq4ehf5usia6a" path="res://src/scene_boss_battle/movement.gd" id="3_s1dmo"]
+[ext_resource type="Script" uid="uid://cr6535d4t6lyj" path="res://src/scene_boss_battle/boss_battle_controller.gd" id="1_r6fdl"]
+[ext_resource type="Script" uid="uid://bhdf6xlpqn1xu" path="res://src/scene_boss_battle/player.gd" id="1_s1dmo"]
+[ext_resource type="Script" uid="uid://cfrnuw2vi1csg" path="res://src/scene_boss_battle/boss.gd" id="3_r6fdl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iulh3"]
 size = Vector2(62, 61)
 
-[sub_resource type="Curve2D" id="Curve2D_iulh3"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 570, 100, 0, 0, 0, 0, 570, 247, 0, 0, 0, 0, 408, 246, 0, 0, 0, 0, 409, 100)
-}
-point_count = 4
-
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_r6fdl")
 
 [node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("1_s1dmo")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Player"]
 modulate = Color(0.0355, 0.0403333, 0.05, 1)
@@ -28,28 +25,21 @@ position = Vector2(317, 314)
 shape = SubResource("RectangleShape2D_iulh3")
 
 [node name="Movement" type="Node" parent="Player"]
-script = ExtResource("3_s1dmo")
 
-[node name="Dance_A" type="Path2D" parent="."]
-position = Vector2(475, 229.002)
-curve = SubResource("Curve2D_iulh3")
+[node name="Boss" type="CharacterBody2D" parent="."]
+position = Vector2(475, 229)
+script = ExtResource("3_r6fdl")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Dance_A"]
-position = Vector2(570, 100)
-rotation = 1.5708
-rotates = false
-loop = false
-script = ExtResource("1_meavw")
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="Dance_A/PathFollow2D"]
-position = Vector2(-100, 570)
-rotation = -1.5708
-
-[node name="Sprite2D" type="Sprite2D" parent="Dance_A/PathFollow2D/CharacterBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Boss"]
 position = Vector2(568, 99)
 scale = Vector2(0.46875, 0.46875)
 texture = ExtResource("1_iulh3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Dance_A/PathFollow2D/CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boss"]
 position = Vector2(569, 99)
 shape = SubResource("RectangleShape2D_iulh3")
+
+[connection signal="boss_turn_start" from="." to="Boss" method="_on_node_2d_boss_turn_start"]
+[connection signal="player_turn_start" from="." to="Player" method="_on_node_2d_player_turn_start"]
+[connection signal="turn_done" from="Player" to="." method="_on_player_turn_done"]
+[connection signal="turn_done" from="Boss" to="." method="_on_boss_turn_done"]
