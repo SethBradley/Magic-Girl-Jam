@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const tile_size = 64
+const tile_size = 128
 var my_turn = false
 var is_moving = false
 var input_vector

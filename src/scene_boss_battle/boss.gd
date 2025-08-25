@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const tile_size = 64
+const tile_size = 128
 const move_speed = 0.25
 var boss_phase = 0
 var is_moving = false
