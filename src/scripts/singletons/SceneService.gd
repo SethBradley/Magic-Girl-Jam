@@ -23,6 +23,15 @@ func load_new_scene(path: String, transition_type:String ="fade_to_black", trans
 	loading_screen.start_transition(transition_type);
 	_load_content(path);
 
+func get_loaded_scene(path: String):
+	var scene_resource: PackedScene = load(path);
+	if (scene_resource) == null:
+		push_error("SceneService: load_additive_scene failed at path: " + path);
+		return null;
+	
+	var instance: Node = scene_resource.instantiate();
+	return instance;
+
 
 func _load_content(path:String):
 	_path = path;

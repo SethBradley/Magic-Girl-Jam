@@ -3,8 +3,8 @@ extends Control
 
 func _ready():
 	await SceneService.loading_screen.game_ready;
-#	if !GameData.Has_Seen_Intro:
-#		print("Play Intro Dialog")
+	
+		
 #	else
 #		print("Load the gameworld") # make separate methods. check for new data too somhow
 		

@@ -1,3 +1,5 @@
+class_name DialogWindow
+
 extends Control
 signal advance_requested
 @export var text_box : RichTextLabel;
@@ -12,16 +14,7 @@ var _typing := false;
 
 func _ready():
 	_initialize();
-	play_dialog_at_id(1);
-	#test();
-	
-	
-func test():
-	var loader = ResourceLoader.load_threaded_request("res://src/scenes/loading_screen/loading_screen.tscn"); # returns an error such as OK or ERR_BUSY. Doesnt return the resource
-	if (!ResourceLoader.exists("res://src/scenes/loading_screen/loading_screen.tscn") or loader == null):
-		print(loader)
-	print(loader)
-	
+
 func _initialize():
 	next_indicator.visible = false;
 	clue_found_window.hide();
@@ -39,7 +32,7 @@ func _set_indicator(show: bool) -> void:
 		
 
 func play_dialog_at_id(targetID: int):
-	dialogEntries = staticdata.get_dialog_entries_at_conv_id(targetID);
+	dialogEntries = DialogService.get_dialog_entries_at_conv_id(targetID);
 	for entry in dialogEntries:
 		_set_indicator(false);
 		await stream_text_to_textbox(entry.text);

@@ -7,6 +7,9 @@ var dialogData = {};
 func _ready():
 	dialogData = staticdata.load_json_file(dialogData_file_path);
 
+func get_loaded_dialog_window():
+	var dialogSceneNode = SceneService.get_loaded_scene("res://src/scenes/dialog/dialog_window.tscn")
+	return dialogSceneNode;
 
 func get_conversation_at_ID(target_id: int):
 	for conversation in dialogData["Conversations"]:

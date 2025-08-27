@@ -20,6 +20,8 @@ config/icon="res://icon.svg"
 staticdata="*res://src/scripts/singletons/static-data.gd"
 Settings="*res://src/scripts/Settings.gd"
 SceneService="*res://src/scripts/singletons/SceneService.gd"
+GameDataService="*res://src/scripts/singletons/GameDataService.gd"
+DialogService="*res://src/scripts/singletons/DialogService.gd"
 
 [display]
 
