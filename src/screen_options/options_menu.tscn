@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://c054ld1rof57w"]
+[gd_scene load_steps=7 format=3 uid="uid://c054ld1rof57w"]
 
+[ext_resource type="Script" uid="uid://bo8vkn64r5ri0" path="res://src/screen_options/options_menu.gd" id="1_87h5f"]
 [ext_resource type="Script" uid="uid://crb02df607v3y" path="res://src/screen_options/v_box_container.gd" id="1_g3p8v"]
 [ext_resource type="AudioStream" uid="uid://bkyq1nl2bffsd" path="res://src/screen_options/Sketchbook 2024-10-13.ogg" id="2_d6rgl"]
 
@@ -46,6 +47,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_87h5f")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -111,5 +113,14 @@ autoplay = true
 bus = &"music"
 parameters/looping = false
 
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 580.0
+offset_top = 515.0
+offset_right = 625.0
+offset_bottom = 546.0
+text = "Back"
+
 [connection signal="value_changed" from="VBoxContainer/Slider_Music" to="VBoxContainer" method="_on_slider_music_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/Slider_SFX" to="VBoxContainer" method="_on_slider_sfx_value_changed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
