@@ -36,12 +36,20 @@ func _process(delta: float) -> void:
 			pass
 		5:	#wait for the boss
 			pass
+		6:	#activate second phase - player turn
+			set_turn_visible_label($LabelPlayerTurn)
+			player_turn_start.emit()
+			step_increment()
+		7:	#wait for player input
+			pass	
 		
 		99: #game_lose
 			set_turn_visible_label($LabelLose)
 			step_increment()
 			pass
-		100: #do nothing for now
+		100: #restart with SPACE
+			if Input.is_key_pressed(KEY_SPACE):
+				get_tree().reload_current_scene()
 			pass
 			
 
@@ -57,7 +65,6 @@ func _on_player_turn_done() -> void:
 func _on_player_game_lose():
 	phase = 99
 	pass # Replace with function body.
-	
 	
 func set_turn_visible_label(_label_obj = null) -> void:
 	#reset all visibilities
