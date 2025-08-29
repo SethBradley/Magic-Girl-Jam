@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const tile_size = 128
+const tile_size = 155
 var my_turn = false
 var is_moving = false
 var input_vector
@@ -8,6 +8,7 @@ var move_count = 0
 
 #signals
 signal turn_done
+signal game_lose
 
 #start my turn
 func _on_node_2d_player_turn_start() -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bkrfrsqvqt8w4"]
+[gd_scene load_steps=9 format=3 uid="uid://bkrfrsqvqt8w4"]
 
 [ext_resource type="Script" uid="uid://cr6535d4t6lyj" path="res://src/scene_boss_battle/boss_battle_controller.gd" id="1_r6fdl"]
 [ext_resource type="Script" uid="uid://bhdf6xlpqn1xu" path="res://src/scene_boss_battle/player.gd" id="1_s1dmo"]
@@ -9,6 +9,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iulh3"]
 size = Vector2(62, 61)
+
+[sub_resource type="LabelSettings" id="LabelSettings_a3xpc"]
+font_size = 48
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_r6fdl")
@@ -49,7 +52,39 @@ position = Vector2(569, 99)
 shape = SubResource("RectangleShape2D_iulh3")
 debug_color = Color(1, 1, 1, 0.42)
 
+[node name="LabelLose" type="Label" parent="."]
+visible = false
+modulate = Color(0, 0, 0, 1)
+offset_left = 789.0
+offset_top = 452.0
+offset_right = 1166.0
+offset_bottom = 589.0
+text = "You lose
+SPACE to restart"
+label_settings = SubResource("LabelSettings_a3xpc")
+
+[node name="LabelBossTurn" type="Label" parent="."]
+visible = false
+modulate = Color(0, 0, 0, 1)
+offset_left = 1361.0
+offset_top = 82.0
+offset_right = 1738.0
+offset_bottom = 219.0
+text = "Boss turn active"
+label_settings = SubResource("LabelSettings_a3xpc")
+
+[node name="LabelPlayerTurn" type="Label" parent="."]
+visible = false
+modulate = Color(0, 0, 0, 1)
+offset_left = 196.0
+offset_top = 81.0
+offset_right = 573.0
+offset_bottom = 218.0
+text = "Player turn active"
+label_settings = SubResource("LabelSettings_a3xpc")
+
 [connection signal="boss_turn_start" from="." to="Boss" method="_on_node_2d_boss_turn_start"]
 [connection signal="player_turn_start" from="." to="Player" method="_on_node_2d_player_turn_start"]
+[connection signal="game_lose" from="Player" to="." method="_on_player_game_lose"]
 [connection signal="turn_done" from="Player" to="." method="_on_player_turn_done"]
 [connection signal="turn_done" from="Boss" to="." method="_on_boss_turn_done"]
